@@ -1,0 +1,25 @@
+diff --git a/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java b/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java
+index f6c257d..9c4db39 100644
+--- a/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java
++++ b/node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java
+@@ -375,7 +375,7 @@ public class Bridge {
+     settings.setDomStorageEnabled(true);
+     settings.setGeolocationEnabled(true);
+     settings.setDatabaseEnabled(true);
+-    settings.setAppCacheEnabled(true);
++    //settings.setAppCacheEnabled(true);
+     settings.setMediaPlaybackRequiresUserGesture(false);
+     settings.setJavaScriptCanOpenWindowsAutomatically(true);
+     if (this.config.getBoolean("android.allowMixedContent", false)) {
+@@ -531,9 +531,11 @@ public class Bridge {
+         return;
+       }
+ 
++      /**
+       Logger.verbose("callback: " + call.getCallbackId() +
+           ", pluginId: " + plugin.getId() +
+           ", methodName: " + methodName + ", methodData: " + call.getData().toString());
++      **/
+ 
+       Runnable currentThreadTask = new Runnable() {
+         @Override
