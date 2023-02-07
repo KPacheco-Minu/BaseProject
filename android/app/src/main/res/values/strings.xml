@@ -3,5 +3,6 @@
     <string name="app_name">Minu</string>
     <string name="title_activity_main">Minu</string>
     <string name="package_name">mx.minu.app</string>
-    <string name="custom_url_scheme">mx.minu.app</string>
+    <string name="fileprovider_authority">mx.minu.app.fileprovider</string>
+    <string name="custom_url_scheme">https</string>
 </resources>

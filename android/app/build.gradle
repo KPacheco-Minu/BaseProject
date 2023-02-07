@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -6,37 +8,46 @@ android {
         applicationId "mx.minu.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 137
+        versionName "4.10.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        aaptOptions {
-             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
-             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
-            ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
-        }
     }
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+          minifyEnabled true
+          shrinkResources true
+          proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+          debuggable true
+          minifyEnabled true
+          shrinkResources true
+          proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 repositories {
+    maven {
+        url  "https://dl.bintray.com/ionic-team/capacitor"
+    }
     flatDir{
         dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
     }
+    mavenCentral()
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation 'androidx.constraintlayout:constraintlayout:$androidConstraintVersion'
     implementation project(':capacitor-android')
     testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation project(':capacitor-cordova-android-plugins')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation 'com.android.support:appcompat-v7:+'
+    implementation "androidx.core:core-ktx:1.6.0"
 }
 
 apply from: 'capacitor.build.gradle'
