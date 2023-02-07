@@ -1,1 +1,8 @@
-{}
+{
+  "appId": "mx.minu.app",
+  "appName": "Minu",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": { "Keyboard": { "resize": "none" } },
+  "server": { "iosScheme": "http", "androidScheme": "http" }
+}
