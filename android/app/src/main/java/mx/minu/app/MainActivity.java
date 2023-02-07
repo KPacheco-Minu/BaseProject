@@ -1,6 +1,11 @@
 package mx.minu.app;
 
+import android.os.Bundle;
+
 import com.getcapacitor.BridgeActivity;
+import com.getcapacitor.Plugin;
+
+import java.util.ArrayList;
 
 public class MainActivity extends BridgeActivity {
 
@@ -9,7 +14,7 @@ public class MainActivity extends BridgeActivity {
         super.onCreate(savedInstanceState);
 
         this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
-          //add(MyPlugin.class);
+            add(MyPlugin.class);
         }});
     }
 }

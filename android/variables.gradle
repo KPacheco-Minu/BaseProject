@@ -1,5 +1,4 @@
 ext {
-    kotlinVersion = '1.4.32'
     minSdkVersion = 21
     compileSdkVersion = 30
     targetSdkVersion = 30

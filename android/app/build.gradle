@@ -40,12 +40,12 @@ repositories {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
-    implementation 'androidx.constraintlayout:constraintlayout:$androidConstraintVersion'
+    implementation "androidx.constraintlayout:constraintlayout:$androidConstraintVersion"
     implementation project(':capacitor-android')
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation project(':capacitor-cordova-android-plugins')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.32"
     implementation 'com.android.support:appcompat-v7:+'
     implementation "androidx.core:core-ktx:1.6.0"
 }
