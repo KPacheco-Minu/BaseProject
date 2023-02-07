@@ -15,9 +15,15 @@
 
 <script>
 import { openNativeCamera } from "@/capacitor/myPlugin";
+import { Plugins } from "@capacitor/core";
+
+const { SplashScreen } = Plugins;
 
 export default {
   name: "App",
+  async mounted() {
+    await SplashScreen.hide();
+  },
   methods: {
     async openCamera() {
       await openNativeCamera();
